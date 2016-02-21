@@ -8,7 +8,7 @@ router.use(function(req, res, next){
   console.log('something is happeneing!');
   next();
 });
-
+  
 
 router.route('/products')
   .get(function(req, res){
@@ -16,14 +16,13 @@ router.route('/products')
       if(err){
         return next(err);
       } else {
-        res.json(products)
+        res.json(products) 
       } 
     })
   })
   .post(function(req, res){
 
     var product = new Product();
-
     product.name = req.body.name;
     product.inStock = req.body.inStock;
     product.cost = req.body.cost;//Finish the post route to properly create a new product..
